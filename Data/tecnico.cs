@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class tecnico
+    public class Tecnico
     {
-        public int CodigoCliente { get; set; }
+        public int CodigoTecnico { get; set; }
         public string Nome { get; set; }
-        public string Profissao { get; set; }
-        public string Setor { get; set; }
+        public string Especialidade { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
         public string Obs { get; set; }
 
 

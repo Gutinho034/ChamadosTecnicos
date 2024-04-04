@@ -41,8 +41,54 @@ namespace ChamadosTecnicosTec55.adicionar
 
             if (string.IsNullOrEmpty(txbNome.Text) || string.IsNullOrEmpty(txbOBS.Text) || string.IsNullOrEmpty(txbProfissao.Text) || string.IsNullOrEmpty(txbSetor.Text))
             {
+                MessageBox.Show("Cadê os dados??");
+                    
+            }
+
+            else
+            {   
+                // TODA VEZ QUE MEXER COM BD USAR TRY
+                try
+                {
+                    // Preenche o Objeto Cliente 
+                    cliente.Nome = txbNome.Text;
+                    cliente.Profissao = txbProfissao.Text;
+                    cliente.Obs = txbOBS.Text;
+                    cliente.Setor = txbSetor.Text;
+
+                    clienteDao.IncluiCliente(cliente);
+
+                }catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao Cadastrar","Atenção",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+
+                }
+                finally
+                {
+                    MessageBox.Show("Cadastrado com sucesso!");
+
+                    this.Close();
+                }
 
             }
+
+        }
+
+        private void txbNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbProfissao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbSetor_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

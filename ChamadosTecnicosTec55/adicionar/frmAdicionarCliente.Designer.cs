@@ -68,6 +68,7 @@
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(368, 20);
             this.txbNome.TabIndex = 1;
+            this.txbNome.TextChanged += new System.EventHandler(this.txbNome_TextChanged);
             // 
             // label3
             // 
@@ -105,6 +106,7 @@
             this.txbProfissao.Name = "txbProfissao";
             this.txbProfissao.Size = new System.Drawing.Size(368, 20);
             this.txbProfissao.TabIndex = 2;
+            this.txbProfissao.TextChanged += new System.EventHandler(this.txbProfissao_TextChanged);
             // 
             // txbSetor
             // 
@@ -112,6 +114,7 @@
             this.txbSetor.Name = "txbSetor";
             this.txbSetor.Size = new System.Drawing.Size(368, 20);
             this.txbSetor.TabIndex = 3;
+            this.txbSetor.TextChanged += new System.EventHandler(this.txbSetor_TextChanged);
             // 
             // txbOBS
             // 
@@ -147,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 450);
+            this.ClientSize = new System.Drawing.Size(391, 471);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txbOBS);
