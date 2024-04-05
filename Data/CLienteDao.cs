@@ -52,6 +52,34 @@ namespace Data
                 }
             }
         }
+
+        public DataSet BuscaCliente(String pesquisa = "")
+        {
+            const string query = "Select * From Clientes Where Nome like @pesquisa";
+
+            try
+            {
+                using (var conexao = new SqlConnection(_conexao)) 
+                using (var comando = new SqlCommand(query, conexao)) 
+                using (var adaptador = new SqlDataAdapter(comando))
+                {
+                    string parametroPesquisa = $"%{pesquisa}%";
+                    comando.Parameters.AddWithValue("@pesquisa", parametroPesquisa);
+                    conexao.Open();
+                    var dsClientes = new DataSet();
+                    adaptador.Fill(dsClientes, "Clientes");
+                    return dsClientes;
+                }
+
+            }catch (Exception ex)
+            {
+                throw new Exception($"Erro ao buscar Clientes:{ex.Message}");
+
+            }
+
+
+        }
+
     }
 }
 

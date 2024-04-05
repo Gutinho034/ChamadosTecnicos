@@ -30,7 +30,7 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbNome = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,13 +62,13 @@
             this.label1.Text = "Nome";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // txbNome
+            // txtNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(12, 102);
-            this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(368, 20);
-            this.txbNome.TabIndex = 1;
-            this.txbNome.TextChanged += new System.EventHandler(this.txbNome_TextChanged);
+            this.txtNome.Location = new System.Drawing.Point(12, 102);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(368, 20);
+            this.txtNome.TabIndex = 1;
+            this.txtNome.TextChanged += new System.EventHandler(this.txbNome_TextChanged);
             // 
             // label3
             // 
@@ -159,7 +159,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txbNome);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Name = "frmAdicionarCliente";
@@ -173,7 +173,7 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbNome;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

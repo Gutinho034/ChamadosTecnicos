@@ -28,7 +28,7 @@ namespace ChamadosTecnicosTec55.adicionar
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            txbNome.Clear();
+            txtNome.Clear();
             txbOBS.Clear();
             txbProfissao.Clear();
             txbSetor.Clear();
@@ -39,7 +39,7 @@ namespace ChamadosTecnicosTec55.adicionar
             Cliente cliente = new Cliente();
             ClienteDao clienteDao = new ClienteDao(_conexao);
 
-            if (string.IsNullOrEmpty(txbNome.Text) || string.IsNullOrEmpty(txbOBS.Text) || string.IsNullOrEmpty(txbProfissao.Text) || string.IsNullOrEmpty(txbSetor.Text))
+            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(txbOBS.Text) || string.IsNullOrEmpty(txbProfissao.Text) || string.IsNullOrEmpty(txbSetor.Text))
             {
                 MessageBox.Show("Cadê os dados??");
                     
@@ -51,7 +51,7 @@ namespace ChamadosTecnicosTec55.adicionar
                 try
                 {
                     // Preenche o Objeto Cliente 
-                    cliente.Nome = txbNome.Text;
+                    cliente.Nome = txtNome.Text;
                     cliente.Profissao = txbProfissao.Text;
                     cliente.Obs = txbOBS.Text;
                     cliente.Setor = txbSetor.Text;
@@ -71,6 +71,8 @@ namespace ChamadosTecnicosTec55.adicionar
 
                     this.Close();
                 }
+
+
 
             }
 
