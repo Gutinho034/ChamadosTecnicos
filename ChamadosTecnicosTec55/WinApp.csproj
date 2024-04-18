@@ -73,6 +73,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_AlterarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AlterarCliente.Designer.cs">
+      <DependentUpon>frm_AlterarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alterar\frmGerirClientes.resx">
       <DependentUpon>frmGerirClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AlterarCliente.resx">
+      <DependentUpon>frm_AlterarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Principal.resx">
       <DependentUpon>frm_Principal.cs</DependentUpon>

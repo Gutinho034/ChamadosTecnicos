@@ -60,5 +60,25 @@ namespace ChamadosTecnicosTec55.Alterar
         {
 
         }
+
+        private void btn_alterar_Click(object sender, EventArgs e)
+        {
+            if(dgvCliente.SelectedRows.Count > 0)
+            {
+                int codigo = Convert.ToInt32(dgvCliente.CurrentRow.Cells[0].Value);
+
+                var frm_AlterarCliente = new frm_AlterarCliente(codigo);
+                frm_AlterarCliente.ShowDialog();
+
+                //Listar Clientes apos fechar tela
+                ListarCliente();
+            }
+
+            else
+            {
+                MessageBox.Show("Selecione um registro para alteração");
+
+            }
+        }
     }
 }

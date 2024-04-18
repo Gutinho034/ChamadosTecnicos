@@ -76,10 +76,45 @@ namespace Data
                 throw new Exception($"Erro ao buscar Clientes:{ex.Message}");
 
             }
-
-
         }
 
+        //xuxar aquió
+        public Cliente ObtemCliente(int codigoCliente)
+        {
+            // Definir o sql para obter o cliente
+            const string query = @"select * from Clientes where
+                                   CodigoCliente = @CodigoCliente";
+            Cliente cliente = null;
+
+            try
+            {
+                using(var conexaoBd = new SqlConnection(_conexao))
+                using (var comando = new SqlCommand(query, conexaoBd))
+                {
+                    comando.Parameters.AddWithValue("@CodigoCliente", codigoCliente);
+                    conexaoBd.Open();
+                    using(var reader = comando.ExecuteReader())                   
+                    {
+                        if(reader.Read())
+                        {
+                            cliente = new Cliente
+                            {
+                                CodigoCliente = Convert.ToInt32(reader["CodigoCliente"]),
+                                Nome = reader["Nome"].ToString(),
+                                Profissao = reader["Profissao"].ToString(),
+                                Setor = reader["Setor"].ToString(),
+                                Obs = reader["Obs"].ToString(),                               
+                            };
+                        }
+                    }
+                }                  
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao obter o cliente {ex.Message}", ex);
+            }
+            return cliente;
+        }
     }
 }
 
